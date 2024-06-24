@@ -3,8 +3,8 @@
 // author: Dapper (@SolDapper)
 // repo: https://github.com/McDegens-DAO/mcbuild
 // license: https://github.com/McDegens-DAO/mcbuild?tab=MIT-1-ov-file
-// *********************************************************************************
-// transaction packager class
+// *****************************************************************************************
+// mcbuild transaction packager class
 class mcbuild {
     static async ComputeLimit(cluster,opti_payer,opti_ix,opti_tolerance,opti_tables=false){
         let connection = new Connection(cluster, 'confirmed');
