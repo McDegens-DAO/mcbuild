@@ -1,2 +1,2 @@
 # mcbuild
-builds, optimizes, serializes, and base64 encodes a transaction and returns it
+A js class that builds, optimizes, serializes, and optionally serializes & base64 encodes a Solana transaction.
