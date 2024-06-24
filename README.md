@@ -6,6 +6,10 @@ A js class that builds, optimizes, and optionally serializes & base64 encodes a 
 // ************************************************************************************
 // include the mcbuild class here above your routes
 // ************************************************************************************
+let rpc = "your-rpc-url;
+let priority = High;
+let tolerance = 1.2;
+let receiver = "GUFxwDrsLzSQ27xxTVe4y9BARZ6cENWmjzwe8XPy7AKu";
 app.route('/donate-build').post(async function(req,res){
     res.setHeader('Access-Control-Allow-Origin', '*'); 
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Encoding, Accept-Encoding');
@@ -33,7 +37,7 @@ app.route('/donate-build').post(async function(req,res){
     let table = false;
     let lamports = req.query.amount * 1000000000;
     let from = new PublicKey(account);
-    let to = new PublicKey("GUFxwDrsLzSQ27xxTVe4y9BARZ6cENWmjzwe8XPy7AKu"); // recipient
+    let to = new PublicKey(receiver); // recipient
     let donateIx = SystemProgram.transfer({fromPubkey:from, lamports:lamports, toPubkey:to})
     let instructions = [ donateIx ];
     tolerance = 2;
