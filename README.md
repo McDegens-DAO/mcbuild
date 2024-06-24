@@ -2,7 +2,7 @@
 A js class that builds, optimizes, and optionally serializes & base64 encodes a Solana transaction.
 
 # Usage
-Click the link below to see this example in a fully implemented Solana Actions server powered by Node and Express.
+Click the link below to see this example in a fully implemented Solana Actions server.
 
 https://github.com/McDegens-DAO/solana-action-express/tree/main
 
