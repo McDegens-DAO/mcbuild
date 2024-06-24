@@ -2,6 +2,10 @@
 A js class that builds, optimizes, and optionally serializes & base64 encodes a Solana transaction.
 
 # Usage
+```javascript
+let result = await mcbuild.tx(rpc,account,instructions,signers,priority,tolerance,serialize,encode,table);
+```
+
 Click the link below to see a full example in a Solana Actions server.
 
 https://github.com/McDegens-DAO/solana-action-express/tree/main
