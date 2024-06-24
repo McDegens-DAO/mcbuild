@@ -3,8 +3,8 @@
 // author: Dapper (@SolDapper)
 // repo: https://github.com/McDegens-DAO/mcbuild
 // license: https://github.com/McDegens-DAO/mcbuild?tab=MIT-1-ov-file
-// *****************************************************************************************
-// transaction packager
+// *********************************************************************************
+// transaction packager class
 class mcbuild {
     static async ComputeLimit(cluster,opti_payer,opti_ix,opti_tolerance,opti_tables=false){
         let connection = new Connection(cluster, 'confirmed');
@@ -80,7 +80,7 @@ class mcbuild {
         if(data < 10000){data = 10000;}
         return data;
     }
-    static async tx(_rpc_,_account_,_instructions_,_signers_,_priority_=false,_tolerance_,_encode_=false,_table_=false){
+    static async tx(_rpc_,_account_,_instructions_,_signers_,_priority_=false,_tolerance_,_serialize_=false,_encode_=false,_table_=false){
         let _obj_={}
         if(_priority_==false){_priority_=priority;}
         let _wallet_= new PublicKey(_account_);
@@ -113,8 +113,10 @@ class mcbuild {
             }
             let _tx_= new VersionedTransaction(_message_);
             if(_signers_!=false){_tx_.sign(_signers_);}
-            if(_encode_ === true){
+            if(_serialize_ === true){
                 _tx_=_tx_.serialize();
+            }
+            if(_encode_ === true){
                 _tx_= Buffer.from(_tx_).toString("base64");
             }
             _obj_.message="success";
