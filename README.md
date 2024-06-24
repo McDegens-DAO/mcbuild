@@ -1,7 +1,7 @@
 # mcbuild
 A js class that builds, optimizes, and optionally serializes & base64 encodes a Solana transaction.
 
-# Usage
+# usage
 ```javascript
 let result = await mcbuild.tx(rpc,account,instructions,signers,priority,tolerance,serialize,encode,table);
 ```
@@ -57,7 +57,7 @@ app.route('/donate-build').post(async function(req,res){
 // ************************************************************************************
 ```
 
-# Class
+# class
 ```javascript
 // ************************************************************************************
 // mcbuild transaction packager class
