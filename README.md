@@ -6,7 +6,7 @@ A js class that builds, optimizes, and optionally serializes & base64 encodes a 
 // ************************************************************************************
 // include the mcbuild class here above your routes
 // ************************************************************************************
-// the server route below returns a solana valid solana action
+// the server route below returns a valid solana action
 // ************************************************************************************
 let rpc = "your-rpc-url;
 let priority = High;
