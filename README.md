@@ -12,7 +12,7 @@ https://github.com/McDegens-DAO/solana-action-express/tree/main
 // ************************************************************************************
 // the server route below returns a valid solana action
 // ************************************************************************************
-let rpc = "your-rpc-url;
+let rpc = "your-rpc-url";
 let priority = High;
 let tolerance = 1.2;
 let receiver = "GUFxwDrsLzSQ27xxTVe4y9BARZ6cENWmjzwe8XPy7AKu";
