@@ -14,7 +14,7 @@ https://github.com/McDegens-DAO/solana-action-express/tree/main
 // ************************************************************************************
 // include the mcbuild class here above your routes
 // ************************************************************************************
-// the server route below returns a valid solana action
+// the example returns a valid solana action tx
 // ************************************************************************************
 let rpc = "your-rpc-url";
 
