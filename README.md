@@ -7,7 +7,7 @@ import mcbuild from './mcbuild.js';
 let result = await mcbuild.tx(params);
 ```
 
-# eaxmple
+# example
 ```javascript
 // donation build tx 
 app.route('/donate-build').post(async function(req,res){
