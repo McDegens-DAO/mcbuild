@@ -26,6 +26,12 @@ _tx_.fees = true;                     // bool   : default true
 _tx_.priority = "Medium";             // string : VeryHigh,High,Medium,Low,Min
 const tx = await mcbuild.tx(_tx_);    // mcbuild
 
+// stop for errors
+if(typeof tx.logs != "undefined"){
+  console.log("error", tx);
+  return;
+}
+
 // sign, serialize, and send transaction
 const signed = await provider.signTransaction(tx);
 const signature = await connection.sendRawTransaction(
