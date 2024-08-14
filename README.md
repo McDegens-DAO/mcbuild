@@ -1,7 +1,7 @@
 # mcbuild
 builds, optimizes, serializes, and encodes a solana transaction for both apps and actions
 
-# usage
+# import
 ```javascript
 import mcbuild from './mcbuild.js';
 ```
