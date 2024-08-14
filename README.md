@@ -20,6 +20,6 @@ _tx_.table = false;                   // array  : default false
 _tx_.tolerance = 1.1;                 // float  : default 1.1    
 _tx_.compute = true;                  // bool   : default true
 _tx_.fees = true;                     // bool   : default true
-_tx_.priority = "Medium";             // string : VeryHigh,High,Medium,Low,Min : default Medium
+_tx_.priority = "Medium";             // string : VeryHigh,High,Medium,Low,Min
 let tx = await mcbuild.tx(_tx_);      // package the tx
 ```
