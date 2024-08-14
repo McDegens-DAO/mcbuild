@@ -28,7 +28,10 @@ const tx = await mcbuild.tx(_tx_);    // mcbuild
 
 // sign, serialize, and send transaction
 const signed = await provider.signTransaction(tx);
-const signature = await connection.sendRawTransaction(signed.serialize(),{skipPreflight:true,maxRetries:0});     
+const signature = await connection.sendRawTransaction(
+  signed.serialize(),
+  {skipPreflight:true,maxRetries:0}
+);     
 
 // track the status
 const status = await mcbuild.status(rpc,signature,10,4);
