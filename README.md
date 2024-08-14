@@ -31,8 +31,7 @@ const signed = await provider.signTransaction(tx);
 const signature = await connection.sendRawTransaction(signed.serialize(),{skipPreflight:true,maxRetries:0});     
 
 // track the status
-const status = await mcbuild.status(signature,10,4);
-if(status != "finalized"){console.log("status", status);}
-console.log("status", "complete");
+const status = await mcbuild.status(rpc,signature,10,4);
+console.log("status", status);
 
 ```
