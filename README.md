@@ -24,7 +24,7 @@ _tx_.tolerance = 1.1;                 // float  : default 1.1
 _tx_.compute = true;                  // bool   : default true
 _tx_.fees = true;                     // bool   : default true
 _tx_.priority = "Medium";             // string : VeryHigh,High,Medium,Low,Min
-const tx = await mcbuild.tx(_tx_);    // package the tx
+const tx = await mcbuild.tx(_tx_);    // build optimized transaction
 
 // sign and send transaction
 const signed = await provider.signTransaction(tx);
