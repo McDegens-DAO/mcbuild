@@ -32,15 +32,22 @@ if(typeof tx.logs != "undefined"){
   return;
 }
 
-// sign, serialize, and send transaction
-const signed = await provider.signTransaction(tx);
-const signature = await connection.sendRawTransaction(
-  signed.serialize(),
-  {skipPreflight:true,maxRetries:0}
-);     
+try{
 
-// track the status
-const status = await mcbuild.status(rpc,signature,10,4);
-console.log("status", status);
+  // sign, serialize, and send transaction
+  const signed = await provider.signTransaction(tx);
+  const signature = await connection.sendRawTransaction(
+    signed.serialize(),
+    {skipPreflight:true,maxRetries:0}
+  );     
+  
+  // track the status
+  const status = await mcbuild.status(rpc,signature,10,4);
+  console.log("status", status);
+
+}
+catch(err){
+  console.log("error", err);
+}
 
 ```
