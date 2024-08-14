@@ -11,12 +11,12 @@ let result = await mcbuild.tx(params);
 ```javascript
 // donation build tx 
 app.route('/donate-build').post(async function(req,res){
-    let err={};if(typeof req.body.account=="undefined"){err.transaction="error";err.message="action did not receive an account";res.send(JSON.stringify(err));}
+    let err={};if(typeof req.body.account=="undefined"){err.message="action did not receive an account";res.json(err);}
     
     // verify amount param was passed
     if(typeof req.query.amount=="undefined"){err.transaction="error";
       err.message = "action did not receive an amount to send";
-      res.send(JSON.stringify(err));
+      res.json(err);
     }
 
     // create instructions
@@ -39,7 +39,7 @@ app.route('/donate-build').post(async function(req,res){
     _tx_.fees = true;                   // bool   : default true
     _tx_.priority = req.query.priority; // string : VeryHigh,High,Medium,Low,Min : default Medium
     let tx = await mcbuild.tx(_tx_);    // package the tx
-    res.send(JSON.stringify(tx));       // output
+    res.json(tx);                       // output
 
 });
 ```
