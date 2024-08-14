@@ -42,7 +42,8 @@ try{
   );     
   
   // track the status
-  const status = await mcbuild.status(rpc,signature,10,4);
+  // default: 10 attempts max to land the tx, check in 4 second intervals
+  const status = await mcbuild.status(rpc,signature,10,4); 
   console.log("status", status);
 
 }
