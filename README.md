@@ -14,7 +14,7 @@ import mcbuild from './mcbuild.js';
 // optimize transaction
 const _tx_ = {};
 _tx_.rpc = rpc;                       // string : required
-_tx_.account = "PAYER-WALLET-HERE";   // string : required
+_tx_.account = payer;                 // string : required
 _tx_.instructions = [instructions];   // array  : required
 _tx_.signers = false;                 // array  : default false
 _tx_.serialize = false;               // bool   : default false
