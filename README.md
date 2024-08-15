@@ -15,7 +15,7 @@ import mcbuild from './mcbuild.js';
 const _tx_ = {};
 _tx_.rpc = rpc;                       // string : required
 _tx_.account = payer;                 // string : required
-_tx_.instructions = [instruction];   // array  : required
+_tx_.instructions = [instruction];    // array  : required
 _tx_.signers = false;                 // array  : default false
 _tx_.serialize = false;               // bool   : default false
 _tx_.encode = false;                  // bool   : default false
@@ -48,7 +48,7 @@ try{
 
 }
 catch(err){
-  console.log("error", err);
+  console.log("err", err);
 }
 
 ```
