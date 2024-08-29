@@ -6,7 +6,7 @@ import { PublicKey, Connection, TransactionMessage, VersionedTransaction, Comput
 import bs58 from 'bs58';
 class mcbuild {
     constructor() {
-        this.name = "mcbuild";
+      this.name = "mcbuild";
     }
     async status(cluster,sig,max=10,int=4){
         return await new Promise(resolve => {
@@ -67,6 +67,7 @@ class mcbuild {
             }).compileToV0Message([]);
         }
         else{
+            console.log("opti_payer", opti_payer.toString());
             opti_msg = new TransactionMessage({
             payerKey: opti_payer.publicKey,
             recentBlockhash: blockhash,
@@ -135,7 +136,7 @@ class mcbuild {
     if(typeof _data_.tolerance=="undefined"){_tolerance_="1.1";}else{_tolerance_=_data_.tolerance;}
     if(typeof _data_.serialize=="undefined"){_serialize_=false;}else{_serialize_=_data_.serialize;}
     if(typeof _data_.encode=="undefined"){_encode_=false;}else{_encode_=_data_.encode;}
-    if(typeof _data_.table=="undefined"){_table_=false;}else{_table_=_data_.tables;}
+    if(typeof _data_.table=="undefined"){_table_=false;}else{_table_=_data_.table;}
     if(typeof _data_.compute=="undefined"){_compute_=true;}else{_compute_=_data_.compute;}
     if(typeof _data_.fees=="undefined"){_fees_=true;}else{_fees_=_data_.fees;}
     let _wallet_= new PublicKey(_account_);
@@ -161,11 +162,16 @@ class mcbuild {
             _instructions_.unshift(ComputeBudgetProgram.setComputeUnitPrice({microLamports:get_priority}));
         }
         let _message_=null;
+        console.log("_wallet_", _wallet_.toString());
+        console.log("_blockhash_", _blockhash_.toString());
+        console.log("_table_", _table_);
         if(_table_!=false){
-            _message_= new TransactionMessage({payerKey:_wallet_,recentBlockhash:_blockhash_,instructions:_instructions_,}).compileToV0Message(_table_);
+            console.log("using table");
+            _message_ = new TransactionMessage({payerKey:_wallet_,recentBlockhash:_blockhash_,instructions:_instructions_,}).compileToV0Message(_table_);
         }
         else{
-            _message_= new TransactionMessage({payerKey:_wallet_,recentBlockhash:_blockhash_,instructions:_instructions_,}).compileToV0Message([]);
+            console.log("not using table");
+            _message_ = new TransactionMessage({payerKey:_wallet_,recentBlockhash:_blockhash_,instructions:_instructions_,}).compileToV0Message([]);
         }
         let _tx_= new VersionedTransaction(_message_);
         if(_signers_!=false){
