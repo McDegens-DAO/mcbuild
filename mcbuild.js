@@ -54,10 +54,12 @@ class mcbuild {
     async ComputeLimit(cluster,opti_payer,opti_ix,opti_tolerance,blockhash,opti_tables=false){
         let connection = new Connection(cluster, 'confirmed');
         let opti_sim_limit = ComputeBudgetProgram.setComputeUnitLimit({units:1400000});
+        let opti_fee_limit = ComputeBudgetProgram.setComputeUnitPrice({microLamports:10000});
         let re_ix = [];
         for (let o in opti_ix) {re_ix.push(opti_ix[o]);}
         opti_ix = re_ix;
         opti_ix.unshift(opti_sim_limit);
+        opti_ix.unshift(opti_fee_limit);
         let opti_msg = null;
         if(opti_tables == false){
             opti_msg = new TransactionMessage({
