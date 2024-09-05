@@ -1,0 +1,24 @@
+{
+  "name": "mcbuild",
+  "version": "0.0.2",
+  "description": "optimized transaction builder",
+  "main": "mcbuild.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McDegens-DAO/mcbuild.git"
+  },
+  "keywords": [
+    "optimizer"
+  ],
+  "author": "@SolDapper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/McDegens-DAO/mcbuild/issues"
+  },
+  "homepage": "https://github.com/McDegens-DAO/mcbuild",
+  "dependencies": {
+    "@solana/web3.js": "^1.89.0",
+    "bs58": "^5.0.0"
+  }
+}
