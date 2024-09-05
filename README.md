@@ -1,6 +1,9 @@
 # mcbuild
 builds, optimizes, serializes, and encodes a solana transaction for both apps and actions
 
+# note
+this tx builder requires a Helius RPC as it utilizes the getPriorityFeeEstimate method
+
 # import
 ```javascript
 import mcbuild from './mcbuild.js';
